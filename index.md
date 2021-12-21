@@ -19,13 +19,13 @@
 
 # 2 Setting up git
 
-git config --global user.name "Vlad Dracula"   
-git config --global user.email "vlad@tran.sylvan.ia"   
+`git config --global user.name "Vlad Dracula" ` 
+`git config --global user.email "vlad@tran.sylvan.ia" `  
 
 
-On macOS and Linux:  git config --global core.autocrlf input    
+On macOS and Linux:  `git config --global core.autocrlf input`    
  
-And on Windows:    git config --global core.autocrlf true   
+And on Windows:    `git config --global core.autocrlf true`   
 <br>
 <br>
 <br>
@@ -49,13 +49,15 @@ $ git init       # make the moons subdirectory a Git repository
 $ ls -a          # ensure the .git subdirectory is present indicating we have created a new Git repository
 ```
 
-Is the git init command, run inside the moons subdirectory, required for tracking files stored in the moons subdirectory?
+Is the `git init` command, run inside the moons subdirectory, required for tracking files stored in the moons subdirectory?
 
 <details>
 <summary>Solution</summary>
+
 No. Dracula does not need to make the moons subdirectory a Git repository because the planets repository will track all files, sub-directories, and subdirectory files under the planets directory. If you do create nested Git repositories they can interfere with each other as the outer repo will try to version-control the inner.    
 <br>
 <br>
+
 If you want to check whether something is already under version control you can naviagte to the directory, run `git status` and if there is no existing information there, you are OK to go ahead and run ` git init`. 
 
 </details>
@@ -158,10 +160,11 @@ The staging area can hold changes from any number of files that you want to comm
 Jennifer has made changes to the Python script she has been working on for weeks, and the modifications she made broke the script, and it no longer runs. 
 
 Which commands will let her recover the last committed version of her Python scrip called `data-cruncher.py`?
-1. `git checkout HEAD`
-2. `git checkout HEAD data_cruncher.py`
-3. `git checkout HEAD~1 data_cruncher.py`
-4.` git checkout <unique ID of last commit> data_cruncher.py`
+
+1. `git checkout HEAD`   
+2. `git checkout HEAD data_cruncher.py`    
+3. `git checkout HEAD~1 data_cruncher.py`   
+4.` git checkout <unique ID of last commit> data_cruncher.py`      
 5. Both 2 and 4
 
  <details>
@@ -215,10 +218,10 @@ The command `git show HEAD` shows changes made at the latest commit, and lists t
 ## Exercise 6.1 Ignoring nested files
 Given a directory structure that looks like:    
 
-results/data    
-results/plots       
+`results/data`    
+`results/plots`       
 
-How would you ignore only results/plots and not results/data?    
+How would you ignore only `results/plots` and not `results/data`?    
 
 <details>
  <summary>Solution</summary>
@@ -247,7 +250,7 @@ How would you ignore all `.dat` files in your root directory except for `final.d
 <br>
 
 ## Exercise 6.3 The order of riles
-Given a .gitignore file with the following contents:
+Given a `.gitignore` file with the following contents:
 
 `*.dat`   
 `!*.dat`   
@@ -306,7 +309,7 @@ If you have time, add the git commands you would need to use.
 
 1. Update local - `git pull origin main`    
 2. Make changes     
-4. Commit changes - 'git commit -m "Add 100 to numbers.txt"`     
+4. Commit changes - `git commit -m "Add 100 to numbers.txt"`    
 5. Update remote - `git push origin main`    
 6. Celebrate!    
 
