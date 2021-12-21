@@ -26,7 +26,10 @@ git config --global user.email "vlad@tran.sylvan.ia"
 On macOS and Linux:  git config --global core.autocrlf input    
  
 And on Windows:    git config --global core.autocrlf true   
-
+<br>
+<br>
+<br>
+<br>
 
 ## Text editors
 
@@ -57,9 +60,20 @@ If you want to check whether something is already under version control you can 
 
 </details>
 
+<br>
+<br>
+<br>
+<br>
 
 # 4 Tracking changes
  ![](/figures/git-committing.svg)
+ 
+ 
+<br>
+<br>
+<br>
+<br>
+
  ## Exercise 4.1 Choosing a commit message
  
  Which is the most appropriate commit message and why?
@@ -77,6 +91,12 @@ If you want to check whether something is already under version control you can 
 </ol> 
 
  </details>
+
+
+<br>
+<br>
+<br>
+<br>
 
 
 ## Exercise 4.2 Commiting changes
@@ -101,6 +121,12 @@ Which command(s) below would save the changes of myfile.txt to my local Git repo
  </details>
 
 
+<br>
+<br>
+<br>
+<br>
+
+
 ## Exercise 4.3 Committing multiple files
 The staging area can hold changes from any number of files that you want to commit as a single snapshot.
 
@@ -119,16 +145,23 @@ The staging area can hold changes from any number of files that you want to comm
 
  </details>
 
+
+<br>
+<br>
+<br>
+<br>
+
+
 # 5 Exploring history
 
 ## Exercise 5.1
 Jennifer has made changes to the Python script she has been working on for weeks, and the modifications she made broke the script, and it no longer runs. 
 
 Which commands will let her recover the last committed version of her Python scrip called `data-cruncher.py`?
-1. git checkout HEAD
-2. git checkout HEAD data_cruncher.py
-3. git checkout HEAD~1 data_cruncher.py
-4. git checkout <unique ID of last commit> data_cruncher.py
+1. `git checkout HEAD`
+2. `git checkout HEAD data_cruncher.py`
+3. `git checkout HEAD~1 data_cruncher.py`
+4.` git checkout <unique ID of last commit> data_cruncher.py`
 5. Both 2 and 4
 
  <details>
@@ -145,6 +178,11 @@ Which commands will let her recover the last committed version of her Python scr
 
  </details>
 
+<br>
+<br>
+<br>
+<br>
+
 ## Exercise 5.2 Reverting a commit
 Jennifer is collaborating with colleagues on her Python script. She realizes her last commit to the project’s repository contained an error, and wants to undo it. Jennifer wants to undo correctly so everyone in the project’s repository gets the correct change. The command `git revert [erroneous commit ID]` will create a new commit that reverses the erroneous commit.
 
@@ -160,20 +198,27 @@ Below are the right steps and explanations for Jennifer to use git revert, what 
 
  <details>
  <summary>Solution</summary>
+ 
 The command `git log` lists project history with commit IDs.
 
 The command `git show HEAD` shows changes made at the latest commit, and lists the commit ID; however, Jennifer should double-check it is the correct commit, and no one else has committed changes to the repository. 
 
  </details>
 
+<br>
+<br>
+<br>
+<br>
+
 # 6 Ignoring things
 
 ## Exercise 6.1 Ignoring nested files
-Given a directory structure that looks like:
+Given a directory structure that looks like:    
 
-results/data
-results/plots
-How would you ignore only results/plots and not results/data?
+results/data    
+results/plots       
+
+How would you ignore only results/plots and not results/data?    
 
 <details>
  <summary>Solution</summary>
@@ -182,13 +227,24 @@ Add `results/plots/` to your `.gitignore`
 
  </details>
 
+<br>
+<br>
+<br>
+<br>
+
 ## Exercise 6.2 Including specific files
-How would you ignore all .dat files in your root directory except for final.dat? Hint: Find out what ! (the exclamation point operator) does.
+How would you ignore all `.dat` files in your root directory except for `final.dat`? Hint: Find out what `!` (the exclamation point operator) does.
 <details>
  <summary>Solution</summary>
- Add `*.dat` to ignore all data files and `!final.dat` to include final.data
+ 
+ Add `*.dat` to ignore all data files and `!final.dat` to include `final.dat`
 
  </details>
+
+<br>
+<br>
+<br>
+<br>
 
 ## Exercise 6.3 The order of riles
 Given a .gitignore file with the following contents:
@@ -200,9 +256,15 @@ What will be the result?
 
 <details>
  <summary>Solution</summary>
-The ! modifier will negate an entry from a previously defined ignore pattern. Because the !*.dat entry negates all of the previous .dat files in the .gitignore, none of them will be ignored, and all .dat files will be tracked.
+ 
+The `!` modifier will negate an entry from a previously defined ignore pattern. Because the `!*.dat` entry negates all of the previous `.dat` files in the `.gitignore`, none of them will be ignored, and all `.dat` files will be tracked.
 
  </details>
+
+<br>
+<br>
+<br>
+<br>
 
 
 # 7 Remotes in GitHub
@@ -220,6 +282,11 @@ The ! modifier will negate an entry from a previously defined ignore pattern. Be
 ![](figures/github-repo-after-first-push.svg)
 
 
+<br>
+<br>
+<br>
+<br>
+
 # 9  Conflicts
 
 ## Exercise 9.1
@@ -235,16 +302,20 @@ If you have time, add the git commands you would need to use.
 
 <details>
  <summary>Solution</summary>
-<ol>
-<li>Update local - `git pull origin main`</li>
-<li>Make changes</li>
-<li>Stage changes - `git add numbers.txt`</li>
-<li>Commit changes - 'git commit -m "Add 100 to numbers.txt"`</li>
-<li>Update remote - `git push origin main`</li>
-<li>Celebrate!</li>
-</ol>
+ 
+
+1. Update local - `git pull origin main`    
+2. Make changes     
+4. Commit changes - 'git commit -m "Add 100 to numbers.txt"`     
+5. Update remote - `git push origin main`    
+6. Celebrate!    
 
  </details>
+
+<br>
+<br>
+<br>
+<br>
 
 # 12 Citation
 
