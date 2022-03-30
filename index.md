@@ -38,27 +38,31 @@ And on Windows:    `git config --global core.autocrlf true`
 # 3 Creating a repository
 
 ## Exercise 3.1
-Dracula would also like to track information about moons. He createas a `moons` directory inside `planets`:
+Along with tracking information about recipes (the project we have already created), Alfredo would also like to track information about cocktails. Despite Jimmy’s concerns, Alfredo creates a `cocktails` project inside his `recipes` project with the following sequence of commands:
 ```bash
-$ cd ~/Desktop   # return to Desktop directory
-$ cd planets     # go into planets directory, which is already a Git repository
-$ ls -a          # ensure the .git subdirectory is still present in the planets directory
-$ mkdir moons    # make a subdirectory planets/moons
-$ cd moons       # go into moons subdirectory
-$ git init       # make the moons subdirectory a Git repository
-$ ls -a          # ensure the .git subdirectory is present indicating we have created a new Git repository
+$ cd ~/Desktop    # return to Desktop directory
+$ cd recipes      # go into recipes directory, which is already a Git repository
+$ ls -a           # ensure the .git subdirectory is still present in the recipes directory
+$ mkdir cocktails # make a sub-directory recipes/cocktails
+$ cd cocktails    # go into cocktails subdirectory
+$ git init        # make the cocktails subdirectory a Git repository
+$ ls -a           # ensure the .git subdirectory is present indicating we have created a new Git repository
 ```
 
-Is the `git init` command, run inside the moons subdirectory, required for tracking files stored in the moons subdirectory?
+Is the `git init` command, run inside the `cocktails` subdirectory, required for tracking files stored in the `cocktails` subdirectory?
 
 <details>
 <summary>Solution</summary>
 
-No. Dracula does not need to make the moons subdirectory a Git repository because the planets repository will track all files, sub-directories, and subdirectory files under the planets directory. If you do create nested Git repositories they can interfere with each other as the outer repo will try to version-control the inner.    
-<br>
-<br>
+No. Alfredo does not need to make the `cocktails` subdirectory a Git repository because the `recipes` repository will track all files, sub-directories, and subdirectory files under the `recipes` directory. Thus, in order to track all information about cocktails, Alfredo only needed to add the `cocktails` subdirectory to the `recipes` directory.
 
-If you want to check whether something is already under version control you can naviagte to the directory, run `git status` and if there is no existing information there, you are OK to go ahead and run ` git init`. 
+Additionally, Git repositories can interfere with each other if they are “nested”: the outer repository will try to version-control the inner repository. Therefore, it’s best to create each new Git repository in a separate directory. To be sure that there is no conflicting repository in the directory, check the output of git status. If it looks like the following, you are good to go to create a new repository as shown above: 
+
+```
+$ git status
+fatal: Not a git repository (or any of the parent directories): .git
+```
+
 
 </details>
 
@@ -79,10 +83,10 @@ If you want to check whether something is already under version control you can 
  ## Exercise 4.1 Choosing a commit message
  
  Which is the most appropriate commit message and why?
- 
- 1. “Changes”
- 2. “Added line ‘But the Mummy will appreciate the lack of humidity’ to mars.txt”
- 3. “Discuss effects of Mars’ climate on the Mummy”
+
+1. “Changes”
+2. “Changed lemon for lime”
+3. “Guacamole modified to the traditional recipe”
  
  <details>
  <summary>Solution</summary>
@@ -132,16 +136,16 @@ Which command(s) below would save the changes of myfile.txt to my local Git repo
 ## Exercise 4.3 Committing multiple files
 The staging area can hold changes from any number of files that you want to commit as a single snapshot.
 
-1. Add some text to `mars.txt` noting your decision to consider Venus as a base
-2. Create a new file `venus.txt` with your initial thoughts about Venus as a base for you and your friends
+1. Add some text to `guacamole.md` noting the rough price of the ingredients.
+2. Create a new file `groceries.md` with a list of products and their prices for different markets.
 3. Add changes from both files to the staging area, and commit those changes.
 
  <details>
  <summary>Solution</summary>
 <ol style="list-style-type:none;">
-  <li>Make changes to mars.txt (nano mars.txt)</li>
-  <li>Create and make changes to venus.txt (nano venus.txt)</li>
-  <li>Add files to staging area in one command or separately (git add mars.txt venus.txt)</li>
+  <li>Make changes to `guacamole.md` ( `nano guacamole.md`)</li>
+  <li>Create and make changes to `groceries.md` (`nano groceries.md)</li>
+  <li>Add files to staging area in one command or separately (`git add` )</li>
   <li>Commit</li>
 </ol>  
 
